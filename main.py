@@ -6,14 +6,14 @@
 # See the solution video in the 100 Days of Python Course for explainations.
 
 
-from datetime import datetime
+from datetime import dt
 import pandas
 import random
 import smtplib
 import os
 
-MY_EMAIL = os.environ.get("amr0102349@gmail.com")
-MY_PASSWORD = os.environ.get("sijabiimtcyxfjdt")
+my_email = os.environ.get("MY_EMAIL")
+my_password = os.environ.get("MY_PASSWORD")
 now = dt.datetime.now()
 today = (now.month , now.day)
 
