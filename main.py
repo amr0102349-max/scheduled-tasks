@@ -20,10 +20,11 @@ today = (now.month , now.day)
 # 1. Update the birthdays.csv
 data = pandas.read_csv("birthdays.csv")
 dict_of_birthday ={(data_row["month"] , data_row["day"]) : data_row for (index , data_row) in data.iterrows()}
-name_of_person = dict_of_birthday[today]
+
 # 2. Check if today matches a birthday in the birthdays.csv
 
 if today in dict_of_birthday :
+   name_of_person = dict_of_birthday[today]
    letters = f"letter_templates/letter_{random.randint(1,3)}.txt"
    with open (letters) as letter_file :
       contents =  letter_file.read()
@@ -35,6 +36,7 @@ if today in dict_of_birthday :
        connection.sendmail(from_addr= MY_EMAIL  ,
                            to_addrs= name_of_person ["email"],
                            msg = f"subject : Happy birthday\n\n {contents}")
+      print("Done")
 else :
    print("no one ")
 
