@@ -27,7 +27,7 @@ for per_id in weather_data["list"] :
         will_rain = True
 
 
-if will_rain :
+if True :
     client = Client(account_sid , auth_token)
     message  =client.messages \
         .create(
